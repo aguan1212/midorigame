@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Suika Game Clone</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="app-wrapper">
+        <div id="game-container">
+            <!-- UI Layer -->
+            <div id="ui-layer">
+                <!-- Header -->
+                <div id="header-ui">
+                    <div class="score-container">
+                        <div class="label">SCORE</div>
+                        <div id="current-score">0</div>
+                    </div>
+
+                    <div class="next-container">
+                        <div class="label">NEXT</div>
+                        <div class="next-slots">
+                            <div class="slot" id="next-0"></div> <!-- Current Next -->
+                            <div class="slot small" id="next-1"></div>
+                            <div class="slot small" id="next-2"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <button id="bgm-toggle" class="icon-btn">🔊</button>
+
+                <!-- Danger Line (Visual) -->
+                <div id="warning-line">
+                    <span>DANGER</span>
+                </div>
+            </div>
+
+            <!-- Start / Result -->
+            <div id="start-screen">
+                <div class="content">
+                    <h1>ミドリゲーム</h1>
+                    <div class="best">BEST: <span id="best-score">0</span></div>
+
+                    <div id="result-area" class="hidden">
+                        <div class="result-score">Score: <span id="final-score">0</span></div>
+                    </div>
+
+                    <button id="start-btn" class="btn play-btn">スタート</button>
+                    <button id="share-btn" class="btn share-btn">Xでシェア</button>
+
+                    <p class="credits">Sound on/off supported</p>
+                </div>
+            </div>
+
+            <!-- Video Overlay -->
+            <div id="video-overlay" class="hidden">
+                <video id="popup-video" playsinline></video>
+                <button id="skip-video-btn">SKIP</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
